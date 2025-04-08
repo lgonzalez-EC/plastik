@@ -40,9 +40,13 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="img/icon-1.png" alt="" style="width: 45px;">Plastik</h2>
+            <picture>
+                <source srcset="img/logo.webp" type="image/webp">
+                <source srcset="img/logo.png" type="image/png">
+                <img class="img-fluid me-2" src="img/logo.png" alt="Plastik Logo" style="max-width: 150px; height: auto;">
+            </picture>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -75,16 +79,20 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
+    <div class="container-fluid hero-header bg-light py-5 mb-5" style="background-image: url('img/hero-bg.jpg'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Plastik vinilos & más</h1>
-                    <p class="animated slideInDown">En PLASTIK tenemos la solución para el sellado de tus ventanas e instalaciones de cancelería. Somos una empresa Mexicana con 25 años de experiencia en el ramo.</p>
+                    <h1 class="display-4 mb-3 animated slideInDown text-white">Plastik vinilos & más</h1>
+                    <p class="animated slideInDown text-white">En PLASTIK tenemos la solución para el sellado de tus ventanas e instalaciones de cancelería. Somos una empresa Mexicana con 25 años de experiencia en el ramo.</p>
                     <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Saber más</a>
                 </div>
                 <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-1.png" alt="">
+                    <picture>
+                        <source srcset="img/logo.webp" type="image/webp">
+                        <source srcset="img/logo.png" type="image/png">
+                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/hero-1.jpg" alt="">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -117,7 +125,7 @@
                             <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
                             <span>Tempor erat elitr rebum at clita</span>
                         </div> -->
-                        <a class="btn btn-primary py-3 px-4" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-4" href="">Leer Más</a>
                     </div>
                 </div>
             </div>
@@ -295,7 +303,7 @@
 
 
     <!-- Roadmap Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">Roadmap</h1>
@@ -334,12 +342,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Roadmap End -->
 
 
     <!-- Token Sale Start -->
-    <div class="container-xxl bg-light py-5 my-5">
+    <!-- <div class="container-xxl bg-light py-5 my-5">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-6">Token Sale</h1>
@@ -381,7 +389,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Token Sale Start -->
 
 
@@ -519,40 +527,46 @@
     <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6">
-                    <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/icon-1.png" alt="" style="width: 45px;">CryptoCoin</h1>
-                    <span>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</span>
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <picture>
+                            <source srcset="img/logo.webp" type="image/webp">
+                            <source srcset="img/logo.png" type="image/png">
+                            <img class="img-fluid me-2" src="img/logo.png" alt="Plastik Logo" style="max-width: 200px; height: auto;">
+                        </picture>
+                    </a>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <h5 class="mb-4">Newsletter</h5>
                     <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita.</p>
                     <div class="position-relative">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Av. Capitel 106, Industrial la Capilla, 37297 León, Gto.</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+52 477 123 4567</p>
                     <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Currency Wallet</a>
-                    <a class="btn btn-link" href="">Currency Transaction</a>
-                    <a class="btn btn-link" href="">Bitcoin Investment</a>
-                    <a class="btn btn-link" href="">Token Sale</a>
+                    <h5 class="mb-4">Horarios</h5>
+                    <p>Lunes a Viernes</p>
+                    <p>9:00 - 19:00</p>
+                    <p>Sabado</p>
+                    <p>9:00 - 13:00</p>
+                    
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <h5 class="mb-4">Accesos Directos</h5>
+                    <a class="btn btn-link" href="">Nosotros</a>
+                    <a class="btn btn-link" href="">Catálogo</a>
+                    <a class="btn btn-link" href="">Contacto</a>
+                    <!-- <a class="btn btn-link" href=""></a> -->
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
+                    <h5 class="mb-4">Siguenos</h5>
                     <div class="d-flex">
                         <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
