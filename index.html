@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">  
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -57,15 +57,6 @@
                 <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
                 <a href="servicios.html" class="nav-item nav-link">Catálogo</a>
                 <a href="desarrollo-especiales.html" class="nav-item nav-link">Desarrollo Especiales</a>
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu shadow-sm m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="token.html" class="dropdown-item">Token Sale</a>
-                        <a href="faq.html" class="dropdown-item">FAQs</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div> -->
                 <a href="contacto.html" class="nav-item nav-link">Contacto</a>
             </div>
             <div class="h-100 d-lg-inline-flex align-items-center d-none">
@@ -79,8 +70,14 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5" style="background-image: url('img/hero-bg.jpg'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; justify-content: center;">
-        <div class="container py-5">
+    <div class="container-fluid hero-header py-5 mb-5" style="position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <video id="videoHeader" autoplay loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="img/video.webm" type="video/webm">
+            <source src="img/video.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+
+        <!-- <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
                     <p class="animated slideInDown text-white">En PLASTIK tenemos la solución para el sellado de tus ventanas e instalaciones de cancelería. Somos una empresa Mexicana con 25 años de experiencia en el ramo.</p>
@@ -94,7 +91,7 @@
                     </picture>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- Header End -->
 
@@ -140,17 +137,17 @@
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
                     <img class="img-fluid mb-4" src="img/icon-9.png" alt="">
                     <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Today Transactions</p>
+                    <p class="fs-5 text-primary mb-0">Proyectos Realizados</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.3s">
                     <img class="img-fluid mb-4" src="img/icon-10.png" alt="">
                     <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Monthly Transactions</p>
+                    <p class="fs-5 text-primary mb-0">Años de Experiencia</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.5s">
                     <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
                     <h1 class="display-4" data-toggle="counter-up">123456</h1>
-                    <p class="fs-5 text-primary mb-0">Total Transactions</p>
+                    <p class="fs-5 text-primary mb-0">Clientes</p>
                 </div>
             </div>
         </div>
@@ -175,7 +172,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Why Us!</h1>
+                <h1 class="display-6">Porque elegirnos</h1>
                 <p class="text-primary fs-5 mb-5">The Best In The crypto Industry</p>
             </div>
             <div class="row g-5">
@@ -607,6 +604,36 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("videoHeader");
+
+        // Establece el volumen inicial del video
+        video.volume = 0.1; // Volumen reducido (10%)
+        console.log("Volumen inicial: 0.1");
+
+        // Función para ajustar el volumen del video
+        const adjustVolume = () => {
+            const scrollPosition = window.scrollY; // Posición actual del scroll
+            const windowHeight = window.innerHeight; // Altura de la ventana
+
+            // Si el usuario está en la parte superior de la página, volumen normal
+            if (scrollPosition < windowHeight) {
+                video.volume = 0.1; // Volumen reducido (10%)
+                console.log("Volumen: 0.1");
+            } else {
+                video.volume = 0; // Silenciar el video
+                console.log("Volumen: 0");
+            }
+        };
+
+        // Escucha el evento de desplazamiento
+        window.addEventListener("scroll", adjustVolume);
+    });
+    </script>
+
+
 </body>
 
 </html>
