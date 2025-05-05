@@ -133,6 +133,31 @@ h4, h5, h6, .h4, .h5, .h6 {
     color: var(--secondary);
 }
 
+.hero-header {
+    /* General styles for .hero-header */
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+}
+
+/* Ajuste del video para dispositivos móviles en vista vertical */
+@media (max-width: 768px) {
+    .hero-header {
+        height: 30vh;
+    }
+}
+
+/* Ajuste del video para pantallas más grandes o en vista horizontal */
+@media (min-width: 769px) {
+    .hero-header {
+        height: 80vh;
+    }
+}
+
+
+
 /*** Service ***/
 .service-item {
     position: relative;
