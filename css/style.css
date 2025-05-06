@@ -76,12 +76,12 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .navbar .navbar-brand {
-    height: 75px;
+    height: 90px; /* Increased height */
 }
 
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
-    padding: 25px 0;
+    padding: 30px 0; /* Increased padding for larger height */
     color: var(--light);
     outline: none;
 }
@@ -102,7 +102,7 @@ h4, h5, h6, .h4, .h5, .h6 {
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link {
         margin-right: 0;
-        padding: 10px 0;
+        padding: 15px 0; /* Adjusted padding for smaller screens */
     }
 
     .navbar .navbar-nav {
