@@ -169,10 +169,7 @@ h4, h5, h6, .h4, .h5, .h6 {
     content: "";
     width: 0;
     height: 0;
-    top: -80px;
-    right: -80px;
-    border: 80px solid;
-    transform: rotate(45deg);
+    
     opacity: 1;
     transition: .5s;
 }
