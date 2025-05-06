@@ -79,7 +79,11 @@
 
     <!-- Header Start -->
     <div class="container-fluid hero-header py-5 mb-5">
-        <video id="videoHeader" autoplay loop
+        <!-- Contenedor del logo mientras carga el video -->
+        <div id="loadingLogo" class="loading-logo">
+            <img src="img/logo.png" alt="Plastik Logo" style="max-width: 400px; height: auto;">
+        </div>
+        <video id="videoHeader" autoplay loop playsinline
             style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; object-fit: cover; z-index: -1;">
             <source src="img/video.webm" type="video/webm">
             <source src="img/video.mp4" type="video/mp4">
@@ -426,32 +430,30 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            let isMutedByScroll = false; // Define the variable to track mute state
-            const video = document.getElementById("videoHeader");
-            const header = document.querySelector(".hero-header"); // Select the header element
+        const video = document.getElementById("videoHeader");
+        const loadingLogo = document.getElementById("loadingLogo");
 
-            // Establece el volumen inicial del video
-            video.volume = 0.1; // Volumen reducido (10%)
-            console.log("Volumen inicial: 0.1");
+        // Oculta el logo cuando el video esté listo para reproducirse
+        video.addEventListener("canplaythrough", () => {
+            loadingLogo.classList.add("hidden");
+        });
 
-            // Función para ajustar el volumen del video
-            const adjustVolume = () => {
-                const headerBottom = header.getBoundingClientRect().bottom; // Get the bottom position of the header
+        // Establece el volumen inicial del video
+        video.volume = 0.1;
 
-                // Si el header está visible, volumen normal
-                if (headerBottom > 0) {
-                    video.volume = 0.1; // Volumen reducido (10%)
-                    console.log("Volumen: 0.1");
-                    isMutedByScroll = true; // Update the mute state
-                } else {
-                    isMutedByScroll = false; // Update the mute state
-                    video.volume = 0; // Silenciar el video
-                    console.log("Volumen: 0");
-                }
-            };
+        // Función para ajustar el volumen del video al desplazarse
+        const adjustVolume = () => {
+            const headerBottom = document.querySelector(".hero-header").getBoundingClientRect().bottom;
 
-            // Escucha el evento de desplazamiento
-            window.addEventListener("scroll", adjustVolume);
+            if (headerBottom > 0) {
+                video.volume = 0.1; // Volumen reducido
+            } else {
+                video.volume = 0; // Silenciar el video
+            }
+        };
+
+        // Escucha el evento de desplazamiento
+        window.addEventListener("scroll", adjustVolume);
 
             // Silenciar video al cambiar de pestaña
             document.addEventListener('visibilitychange', () => {

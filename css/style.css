@@ -142,6 +142,37 @@ h4, h5, h6, .h4, .h5, .h6 {
     overflow: hidden;
 }
 
+.loading-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que esté encima del video */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-logo.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#videoHeader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transición suave al mostrar el video */
+}
+
 /* Ajuste del video para dispositivos móviles en vista vertical */
 @media (max-width: 768px) {
     .hero-header {
