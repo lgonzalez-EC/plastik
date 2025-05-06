@@ -142,6 +142,21 @@ h4, h5, h6, .h4, .h5, .h6 {
     overflow: hidden;
 }
 
+#enableAudio {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #006BB9;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+#enableAudio:hover {
+    background-color: #004a8b;
+}
+
 .loading-logo {
     position: absolute;
     top: 50%;

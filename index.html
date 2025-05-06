@@ -34,6 +34,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        #enableAudio {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #006BB9;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        #enableAudio:hover {
+            background-color: #004a8b;
+        }
+    </style>
 </head>
 
 <body>
@@ -89,6 +106,10 @@
             <source src="img/video.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de video.
         </video>
+        <!-- Botón para habilitar el audio -->
+        <button id="enableAudio" class="btn btn-primary" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; display: none;">
+            Habilitar Audio
+        </button>
     </div>
     <!-- Header End -->
 
@@ -432,14 +453,32 @@
         document.addEventListener("DOMContentLoaded", function () {
         const video = document.getElementById("videoHeader");
         const loadingLogo = document.getElementById("loadingLogo");
+        const enableAudioButton = document.getElementById("enableAudio");
 
         // Oculta el logo cuando el video esté listo para reproducirse
         video.addEventListener("canplaythrough", () => {
             loadingLogo.classList.add("hidden");
         });
 
-        // Establece el volumen inicial del video
-        video.volume = 0.1;
+        // Intenta reproducir el video automáticamente con audio
+        const playVideoWithAudio = () => {
+            video.volume = 0.1; // Establece el volumen inicial
+            video.muted = false; // Asegúrate de que el video no esté silenciado
+            video.play().catch(() => {
+                // Si el navegador bloquea la reproducción automática, muestra el botón
+                enableAudioButton.style.display = "block";
+            });
+        };
+
+        // Llama a la función para intentar reproducir el video
+        playVideoWithAudio();
+
+        // Habilita el audio cuando el usuario haga clic en el botón
+        enableAudioButton.addEventListener("click", () => {
+            video.muted = false; // Habilita el audio
+            video.play(); // Reproduce el video
+            enableAudioButton.style.display = "none"; // Oculta el botón
+        });
 
         // Función para ajustar el volumen del video al desplazarse
         const adjustVolume = () => {
@@ -455,16 +494,15 @@
         // Escucha el evento de desplazamiento
         window.addEventListener("scroll", adjustVolume);
 
-            // Silenciar video al cambiar de pestaña
-            document.addEventListener('visibilitychange', () => {
-                if (document.visibilityState === 'hidden') {
-                    video.volume = 0; // Silenciar el video al cambiar de pestaña
-                } else if (document.visibilityState === 'visible' && !isMutedByScroll) {
-                    video.volume = 0.1; // Restaurar el volumen reducido al volver a la pestaña
-                }
-            });
-
+        // Silenciar video al cambiar de pestaña
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                video.volume = 0; // Silenciar el video al cambiar de pestaña
+            } else if (document.visibilityState === "visible") {
+                video.volume = 0.1; // Restaurar el volumen reducido al volver a la pestaña
+            }
         });
+    });
     </script>
 
 </body>
