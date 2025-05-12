@@ -52,7 +52,8 @@
             <picture>
                 <source srcset="img/icon.webp" type="image/webp">
                 <source srcset="img/icon.png" type="image/png">
-                <img class="img-fluid me-2" src="img/icon.png" alt="Plastik Logo" style="max-width: 70px; height: auto;">
+                <img class="img-fluid me-2" src="img/icon.png" alt="Plastik Logo"
+                    style="max-width: 70px; height: auto;">
             </picture>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -68,10 +69,13 @@
                 <a href="contacto.html" class="nav-item nav-link">Contacto</a>
             </div>
             <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
+                        class="fab fa-instagram"></i></a>
+                <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i
+                        class="fab fa-linkedin-in"></i></a>
+
             </div>
         </div>
     </nav>
@@ -81,9 +85,9 @@
     <!-- Header Start -->
     <div class="container-fluid hero-header py-5 mb-5">
         <!-- Contenedor del logo mientras carga el video -->
-        <div id="loadingLogo" class="loading-logo">
+        <!-- <div id="loadingLogo" class="loading-logo">
             <img src="img/logo.png" alt="Plastik Logo" style="max-width: 400px; height: auto;">
-        </div>
+        </div> -->
         <video id="videoHeader" autoplay loop playsinline
             style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; object-fit: cover; z-index: -1;">
             <source src="img/video.webm" type="video/webm">
@@ -91,7 +95,8 @@
             Tu navegador no soporta la reproducción de video.
         </video>
         <!-- Botón para habilitar el audio -->
-        <button id="enableAudio" class="btn btn-primary" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; display: none;">
+        <button id="enableAudio" class="btn btn-primary"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; display: none;">
             Habilitar Audio
         </button>
     </div>
@@ -108,7 +113,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6">Acerca de Nosotros</h1>
-                        <p class="text-primary fs-5 mb-4">The Most Trusted Cryptocurrency Platform</p>
+                       
                         <p>Somos una empresa Mexicana con 25 años de experiencia en el ramo. Nos caracterizamos por nuestro servicio, calidad e innovación en nuestro producto.</p>
                         <p class="mb-4">Todo nuestro vinil extruido está fabricado con PVC 100% virgen. Cuenta  con los mayores estándares de calidad, en cuanto respecta a: durabilidad, consistencia del calibre, funcionamiento, resistencia a la humedad y al sol.</p>
                         <div class="d-flex align-items-center mb-2">
@@ -235,31 +240,34 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl bg-light py-5 my-5">
+    <div class="container-fluid py-5 my-5" style="background-color: #01102F;">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6 mb-5">Nuestros Productos</h1>
+                <h2 class="display-6 mb-5 text-white">Nuestros Productos</h2>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-white p-5 d-flex flex-column align-items-center justify-content-center"
-                        style="min-height: 200px;">
-                        <img class="img-fluid mb-4" src="img/catalogo_1.webp" alt="" style="max-width: 200px;">
-                        <h5 class="mb-3 text-center">Empaques de vinil extruido</h5>
+                <div class="col-lg-4 col-md-4">
+                    <div class="product-card">
+                        <img class="product-image" src="img/catalogo_1.webp" alt="Cubre Ranuras">
+                        <div class="product-content">
+                            <h5 class="product-title">Cubre Ranuras</h5>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-white p-5 d-flex flex-column align-items-center justify-content-center"
-                        style="min-height: 200px;">
-                        <img class="img-fluid mb-4" src="img/catalogo_2.webp" alt="" style="max-width: 200px;">
-                        <h5 class="mb- text-center">Extrusiones de plástico flexible y semirrígido</h5>
+                <div class="col-lg-4 col-md-4">
+                    <div class="product-card">
+                        <img class="product-image" src="img/catalogo_2.webp" alt="Coextruidos">
+                        <div class="product-content">
+                            <h5 class="product-title">Coextruidos</h5>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item bg-white p-5 d-flex flex-column align-items-center justify-content-center"
-                        style="min-height: 200px;">
-                        <img class="img-fluid mb-4" src="img/catalogo_3.webp" alt="" style="max-width: 200px;">
-                        <h5 class="mb- text-center">Soluciones para el sellado de ventanas y cancelería</h5>
+                <div class="col-lg-4 col-md-4">
+                    <div class="product-card">
+                        <img class="product-image" src="img/catalogo_3.webp" alt="Empaque de Vinil">
+                        <div class="product-content">
+                            <h5 class="product-title">Empaque de Vinil</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -435,58 +443,58 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const video = document.getElementById("videoHeader");
-        const loadingLogo = document.getElementById("loadingLogo");
-        const enableAudioButton = document.getElementById("enableAudio");
+            const video = document.getElementById("videoHeader");
+            const loadingLogo = document.getElementById("loadingLogo");
+            const enableAudioButton = document.getElementById("enableAudio");
 
-        // Oculta el logo cuando el video esté listo para reproducirse
-        video.addEventListener("canplaythrough", () => {
-            loadingLogo.classList.add("hidden");
-        });
-
-        // Intenta reproducir el video automáticamente con audio
-        const playVideoWithAudio = () => {
-            video.volume = 0.1; // Establece el volumen inicial
-            video.muted = false; // Asegúrate de que el video no esté silenciado
-            video.play().catch(() => {
-                // Si el navegador bloquea la reproducción automática, muestra el botón
-                enableAudioButton.style.display = "block";
+            // Oculta el logo cuando el video esté listo para reproducirse
+            video.addEventListener("canplaythrough", () => {
+                loadingLogo.classList.add("hidden");
             });
-        };
 
-        // Llama a la función para intentar reproducir el video
-        playVideoWithAudio();
+            // Intenta reproducir el video automáticamente con audio
+            const playVideoWithAudio = () => {
+                video.volume = 0.1; // Establece el volumen inicial
+                video.muted = false; // Asegúrate de que el video no esté silenciado
+                video.play().catch(() => {
+                    // Si el navegador bloquea la reproducción automática, muestra el botón
+                    enableAudioButton.style.display = "block";
+                });
+            };
 
-        // Habilita el audio cuando el usuario haga clic en el botón
-        enableAudioButton.addEventListener("click", () => {
-            video.muted = false; // Habilita el audio
-            video.play(); // Reproduce el video
-            enableAudioButton.style.display = "none"; // Oculta el botón
+            // Llama a la función para intentar reproducir el video
+            playVideoWithAudio();
+
+            // Habilita el audio cuando el usuario haga clic en el botón
+            enableAudioButton.addEventListener("click", () => {
+                video.muted = false; // Habilita el audio
+                video.play(); // Reproduce el video
+                enableAudioButton.style.display = "none"; // Oculta el botón
+            });
+
+            // Función para ajustar el volumen del video al desplazarse
+            const adjustVolume = () => {
+                const headerBottom = document.querySelector(".hero-header").getBoundingClientRect().bottom;
+
+                if (headerBottom > 0) {
+                    video.volume = 0.1; // Volumen reducido
+                } else {
+                    video.volume = 0; // Silenciar el video
+                }
+            };
+
+            // Escucha el evento de desplazamiento
+            window.addEventListener("scroll", adjustVolume);
+
+            // Silenciar video al cambiar de pestaña
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "hidden") {
+                    video.volume = 0; // Silenciar el video al cambiar de pestaña
+                } else if (document.visibilityState === "visible") {
+                    video.volume = 0.1; // Restaurar el volumen reducido al volver a la pestaña
+                }
+            });
         });
-
-        // Función para ajustar el volumen del video al desplazarse
-        const adjustVolume = () => {
-            const headerBottom = document.querySelector(".hero-header").getBoundingClientRect().bottom;
-
-            if (headerBottom > 0) {
-                video.volume = 0.1; // Volumen reducido
-            } else {
-                video.volume = 0; // Silenciar el video
-            }
-        };
-
-        // Escucha el evento de desplazamiento
-        window.addEventListener("scroll", adjustVolume);
-
-        // Silenciar video al cambiar de pestaña
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                video.volume = 0; // Silenciar el video al cambiar de pestaña
-            } else if (document.visibilityState === "visible") {
-                video.volume = 0.1; // Restaurar el volumen reducido al volver a la pestaña
-            }
-        });
-    });
     </script>
 
 </body>
