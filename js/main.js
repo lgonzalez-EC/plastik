@@ -61,8 +61,6 @@
     });
     
 
-
-
     // Roadmap carousel
     $(".roadmap-carousel").owlCarousel({
         autoplay: true,
