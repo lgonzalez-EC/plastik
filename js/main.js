@@ -1,4 +1,6 @@
 (function ($) {
+    AOS.init();
+
     "use strict";
 
     // Spinner
@@ -109,4 +111,14 @@
 
     
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll("[data-toggle='counter-up']");
+    counters.forEach((counter) => {
+        new CounterUp(counter, {
+            duration: 2000,
+            delay: 16,
+        }).start();
+    });
+});
 
