@@ -53,13 +53,28 @@ h4, h5, h6, .h4, .h5, .h6 {
 .btn-sm-square { width: 32px; height: 32px; }
 .btn-lg-square { width: 48px; height: 48px; }
 
+
 /*** Back to Top ***/
 .back-to-top {
     position: fixed;
-    display: none;
+    display: none; /* Oculto inicialmente */
     right: 30px;
     bottom: 60px;
     z-index: 99;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary);
+    color: #fff;
 }
 
 /*** Spinner ***/

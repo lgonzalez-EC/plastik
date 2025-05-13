@@ -1,8 +1,14 @@
 (function ($) {
-    AOS.init();
+    
 
     "use strict";
-
+    
+    
+    
+    AOS.init();
+    
+    
+    
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -12,10 +18,6 @@
         }, 1);
     };
     spinner();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
 
 
     // Sticky Navbar
@@ -26,27 +28,39 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
+
     // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        // Mostrar el botón cuando el usuario hace scroll hacia abajo
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "flex"; // Mostrar el botón
+            } else {
+                backToTopButton.style.display = "none"; // Ocultar el botón
+            }
+        });
+
+        // Desplazarse hacia arriba al hacer clic en el botón
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // Desplazamiento suave
+            });
+        });
     });
 
 
     // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
+     $('[data-toggle="counter-up"]').counterUp({
+         delay: 10,
+         time: 2000
     });
+    
+
 
 
     // Roadmap carousel
@@ -57,30 +71,30 @@
         loop: true,
         dots: false,
         nav: true,
-        navText : [
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:2
+            576: {
+                items: 2
             },
-            768:{
-                items:3
+            768: {
+                items: 3
             },
-            992:{
-                items:4
+            992: {
+                items: 4
             },
-            1200:{
-                items:5
+            1200: {
+                items: 5
             }
         }
     });
 
-    
+
 
 
     // Testimonials carousel
@@ -92,33 +106,25 @@
         center: true,
         dots: false,
         nav: true,
-        navText : [
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
 
-    
+
 })(jQuery);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const counters = document.querySelectorAll("[data-toggle='counter-up']");
-    counters.forEach((counter) => {
-        new CounterUp(counter, {
-            duration: 2000,
-            delay: 16,
-        }).start();
-    });
-});
+
 
