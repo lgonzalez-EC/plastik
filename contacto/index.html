@@ -8,6 +8,10 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <!-- Favicon -->
     <link href="../img/icon.webp" rel="icon">
 
@@ -165,17 +169,17 @@
 
     <!-- Modal de aviso -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contactModalLabel">Aviso</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body" id="contactModalMsg">
-            <!-- Aquí va el mensaje -->
-          </div>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Aviso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="contactModalMsg">
+                    <!-- Aquí va el mensaje -->
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <!-- Modal de aviso fin -->
 
@@ -283,29 +287,29 @@
                 method: 'POST',
                 body: data
             })
-            .then(response => response.text())
-            .then(msg => {
-                let modalMsg = '';
-                if (msg.trim() === "ok") {
-                    modalMsg = '<div class="text-success">¡Mensaje enviado correctamente!</div>';
-                    form.reset();
-                } else {
-                    modalMsg = '<div class="text-danger">Hubo un error al enviar el mensaje.</div>';
-                }
-                document.getElementById('contactModalMsg').innerHTML = modalMsg;
-                var modal = new bootstrap.Modal(document.getElementById('contactModal'));
-                modal.show();
-            })
-            .catch(() => {
-                document.getElementById('contactModalMsg').innerHTML = '<div class="text-danger">Hubo un error al enviar el mensaje.</div>';
-                var modal = new bootstrap.Modal(document.getElementById('contactModal'));
-                modal.show();
-            });
+                .then(response => response.text())
+                .then(msg => {
+                    let modalMsg = '';
+                    if (msg.trim() === "ok") {
+                        modalMsg = '<div class="text-success">¡Mensaje enviado correctamente!</div>';
+                        form.reset();
+                    } else {
+                        modalMsg = '<div class="text-danger">Hubo un error al enviar el mensaje.</div>';
+                    }
+                    document.getElementById('contactModalMsg').innerHTML = modalMsg;
+                    var modal = new bootstrap.Modal(document.getElementById('contactModal'));
+                    modal.show();
+                })
+                .catch(() => {
+                    document.getElementById('contactModalMsg').innerHTML = '<div class="text-danger">Hubo un error al enviar el mensaje.</div>';
+                    var modal = new bootstrap.Modal(document.getElementById('contactModal'));
+                    modal.show();
+                });
         });
     </script>
 
-    
-    
+
+
 </body>
 
 </html>
