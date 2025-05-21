@@ -65,11 +65,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="./" class="nav-item nav-link active">Inicio</a>
-                <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
-                <a href="catalogo/" class="nav-item nav-link">Catálogo</a>
-                <a href="desarrollo-especiales.html" class="nav-item nav-link">Desarrollo Especiales</a>
-                <a href="contacto.html" class="nav-item nav-link">Contacto</a>
+                <!-- Navbar -->
+                <a href="/" class="nav-item nav-link active">Inicio</a>
+                <a href="/nosotros/" class="nav-item nav-link">Nosotros</a>
+                <!-- <a href="/catalogo/" class="nav-item nav-link">Catálogo</a> -->
+                <a href="/desarrollo-especiales/" class="nav-item nav-link">Desarrollo Especiales</a>
+                <a href="/contacto/" class="nav-item nav-link">Contacto</a>
             </div>
             <div class="h-100 d-lg-inline-flex align-items-center d-none">
                 <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://www.facebook.com/profile.php?id=100094630059335" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -100,40 +101,6 @@
         </button>
     </div>
     <!-- Header End -->
-
-
-    <!-- About Start -->
-    <!-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="img/about.png" alt="">
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <h1 class="display-6">Acerca de Nosotros</h1>
-                       
-                        <p>Somos una empresa Mexicana con 25 años de experiencia en el ramo. Nos caracterizamos por nuestro servicio, calidad e innovación en nuestro producto.</p>
-                        <p class="mb-4">Todo nuestro vinil extruido está fabricado con PVC 100% virgen. Cuenta  con los mayores estándares de calidad, en cuanto respecta a: durabilidad, consistencia del calibre, funcionamiento, resistencia a la humedad y al sol.</p>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
-                            <span>Tempor erat elitr rebum at clita</span>
-                        </div>
-                        <a class="btn btn-primary py-3 px-4" href="">Leer Más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- About End -->
 
 
     <!-- Facts Start -->
@@ -382,7 +349,8 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-12 d-flex justify-content-center align-items-center">
-                    <a href="index.html" class="d-flex align-items-center">
+                    <!-- Footer logo -->
+                    <a href="/" class="d-flex align-items-center">
                         <picture>
                             <source srcset="img/logo.webp" type="image/webp">
                             <source srcset="img/logo.png" type="image/png">
@@ -408,9 +376,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Enlaces</h5>
-                    <a class="btn btn-link text-decoration-none" href="">Nosotros</a>
-                    <a class="btn btn-link text-decoration-none" href="">Catálogo</a>
-                    <a class="btn btn-link text-decoration-none" href="">Contacto</a>
+                    <!-- Footer enlaces -->
+                    <a class="btn btn-link text-decoration-none" href="/nosotros/">Nosotros</a>
+                    <!-- <a class="btn btn-link text-decoration-none" href="/catalogo/">Catálogo</a> -->
+                    <a class="btn btn-link text-decoration-none" href="/contacto/">Contacto</a>
                     <!-- <a class="btn btn-link text-decoration-none" href=""></a> -->
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -466,7 +435,7 @@
                 loadingLogo.classList.add("hidden");
             });
 
-            // Intenta reproducir el video automáticamente con audio
+            // Intenta reproducir el video automáticamente with audio
             const playVideoWithAudio = () => {
                 video.volume = 0.1; // Establece el volumen inicial
                 video.muted = false; // Asegúrate de que el video no esté silenciado

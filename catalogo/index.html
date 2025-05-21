@@ -47,9 +47,9 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="./" class="navbar-brand d-flex align-items-center">
             <picture>
-                <source srcset="img/icon.webp" type="image/webp">
-                <source srcset="img/icon.png" type="image/png">
-                <img class="img-fluid me-2" src="img/icon.png" alt="Plastik Logo" style="max-width: 70px; height: auto;">
+                <source srcset="../img/icon.webp" type="image/webp">
+                <source srcset="../img/icon.png" type="image/png">
+                <img class="img-fluid me-2" src="../img/icon.png" alt="Plastik Logo" style="max-width: 70px; height: auto;">
             </picture>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -60,7 +60,7 @@
                 <a href="../index.html" class="nav-item nav-link ">Inicio</a>
                 <a href="../nosotros.html" class="nav-item nav-link">Nosotros</a>
                 <a href="./" class="nav-item nav-link active">Catálogo</a>
-                <a href="../desarrollo-especiales.html" class="nav-item nav-link">Desarrollo Especiales</a>
+                <a href="../desarrollo-especiales/" class="nav-item nav-link">Desarrollo Especiales</a>
                 <a href="../contacto.html" class="nav-item nav-link">Contacto</a>
             </div>
             <div class="h-100 d-lg-inline-flex align-items-center d-none">
@@ -94,30 +94,44 @@
                 <p>Explora nuestra amplia gama de productos diseñados para satisfacer tus necesidades.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item bg-light p-5 text-center">
-                        <img class="img-fluid mb-4" src="../img/icon-1.png" alt="Bolsas y Rollos">
-                        <h5 class="mb-3">Bolsas y Rollos</h5>
-                        <p>Variedad de bolsas y rollos plásticos para diferentes usos y necesidades.</p>
-                        <a href="bolsas-rollos.html">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
+                <!-- catalogo_1 -->
+                <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                    <div class="product-card p-5">
+                        <img class="product-image" src="../img/catalogo_1.webp" alt="Cubre Ranuras">
+                        <div class="product-content">
+                            <h5 class="product-title">Cubre Ranuras</h5>
+                        </div>
+                        <a href="cubre-ranura/">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-light p-5 text-center">
-                        <img class="img-fluid mb-4" src="../img/icon-2.png" alt="Cintas y Flejes">
-                        <h5 class="mb-3">Cintas y Flejes</h5>
-                        <p>Cintas adhesivas, flejes y accesorios para empaque y embalaje seguro.</p>
-                        <a href="cintas-flejes.html">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
+                <!-- catalogo_2 -->
+                <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                    <div class="product-card p-5">
+                        <img class="product-image" src="../img/catalogo_2.webp" alt="Coextruidos">
+                        <div class="product-content">
+                            <h5 class="product-title">Coextruidos</h5>
+                        </div>
+                        <a href="coextruido/">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <!-- catalogo_3 -->
+                <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                    <div class="product-card p-5">
+                        <img class="product-image" src="../img/catalogo_3.webp" alt="Empaque de Vinil">
+                        <div class="product-content">
+                            <h5 class="product-title">Empaque de Vinil</h5>
+                        </div>
+                        <a href="empaque-vinil/">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light p-5 text-center">
-                        <img class="img-fluid mb-4" src="../img/icon-3.png" alt="Termoencogibles">
-                        <h5 class="mb-3">Termoencogibles</h5>
+                        <img class="product-image" src="../img/catalogo_3.webp" alt="Empaque de Vinil">
+                        <h5 class="mb-3">Empaque de Vinil</h5>
                         <p>Películas y fundas termoencogibles para protección y presentación de productos.</p>
                         <a href="termoencogibles.html">Ver productos <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -129,7 +143,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-12 d-flex justify-content-center align-items-center">
-                    <a href="index.html" class="d-flex align-items-center">
+                    <a href="../" class="d-flex align-items-center">
                         <picture>
                             <source srcset="../img/logo.webp" type="image/webp">
                             <source srcset="../img/logo.png" type="image/png">
@@ -174,7 +188,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center mb-3 mb-md-0">
-                        &copy; <a href="#">Plastik</a>, Todos los Reserrvados.
+                        &copy; <a href="../">Plastik</a>, Todos los Reserrvados.
                     </div>
                 </div>
             </div>
