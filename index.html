@@ -87,22 +87,15 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid hero-header py-5 mb-5">
-        <!-- Contenedor del logo mientras carga el video -->
-        <!-- <div id="loadingLogo" class="loading-logo">
-            <img src="img/logo.png" alt="Plastik Logo" style="max-width: 400px; height: auto;">
-        </div> -->
+    <div class="container-fluid hero-header py-5 mb-5" style="position: relative; overflow: hidden;">
+        <img id="coverImage" src="img/hero-1.jpg" alt="Portada"
+            style="position: absolute; top:0; left:0; width:60%; height:60%; object-fit:cover; z-index:2; transition:opacity 0.5s; left: 50%; top: 50%; transform: translate(-50%, -50%);">
         <video id="videoHeader" autoplay loop playsinline
-            style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; object-fit: cover; z-index: 1;">
             <source src="img/video.webm" type="video/webm">
             <source src="img/video.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de video.
         </video>
-        <!-- Botón para habilitar el audio -->
-        <button id="enableAudio" class="btn btn-light"
-            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; display: none; color: #6c757d;">
-            <i class="fa fa-volume-up text-white"></i>
-        </button>
     </div>
     <!-- Header End -->
 
@@ -429,60 +422,80 @@
     <script src="js/main.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const video = document.getElementById("videoHeader");
-            const loadingLogo = document.getElementById("loadingLogo");
-            const enableAudioButton = document.getElementById("enableAudio");
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("videoHeader");
+    const cover = document.getElementById("coverImage");
+    let audioEnabled = false;
+    let videoStarted = false;
 
-            // Oculta el logo cuando el video esté listo para reproducirse
-            video.addEventListener("canplaythrough", () => {
-                loadingLogo.classList.add("hidden");
-            });
+    // Estado inicial: imagen visible, video oculto
+    video.style.opacity = 0;
+    cover.style.opacity = 1;
+    video.muted = true;
 
-            // Intenta reproducir el video automáticamente with audio
-            const playVideoWithAudio = () => {
-                video.volume = 0.1; // Establece el volumen inicial
-                video.muted = false; // Asegúrate de que el video no esté silenciado
-                video.play().catch(() => {
-                    // Si el navegador bloquea la reproducción automática, muestra el botón
-                    enableAudioButton.style.display = "block";
-                });
-            };
+    // Después de 3 segundos, oculta la imagen y muestra el video sin sonido
+    setTimeout(() => {
+        cover.style.opacity = 0;
+        video.style.opacity = 1;
+        video.play();
+        videoStarted = true;
+    }, 3000);
 
-            // Llama a la función para intentar reproducir el video
-            playVideoWithAudio();
+    // Función para activar el audio
+    function enableAudio() {
+        if (!audioEnabled && videoStarted) {
+            video.muted = false;
+            video.volume = 1;
+            audioEnabled = true;
+        }
+    }
 
-            // Habilita el audio cuando el usuario haga clic en el botón
-            enableAudioButton.addEventListener("click", () => {
-                video.muted = false; // Habilita el audio
-                video.play(); // Reproduce el video
-                enableAudioButton.style.display = "none"; // Oculta el botón
-            });
+    // Al hacer clic en cualquier parte del header, activa el audio
+    document.querySelector('.hero-header').addEventListener('click', function () {
+        enableAudio();
+        video.play();
+    });
 
-            // Función para ajustar el volumen del video al desplazarse
-            const adjustVolume = () => {
-                const headerBottom = document.querySelector(".hero-header").getBoundingClientRect().bottom;
+    // Al mover el mouse sobre el header, activa el audio
+    document.querySelector('.hero-header').addEventListener('mousemove', function () {
+        enableAudio();
+        video.play();
+    });
 
-                if (headerBottom > 0) {
-                    video.volume = 0.1; // Volumen reducido
-                } else {
-                    video.volume = 0; // Silenciar el video
-                }
-            };
+    // Al hacer scroll, activa el audio si el video ya empezó
+    window.addEventListener("scroll", function () {
+        enableAudio();
+        handleScroll();
+    });
 
-            // Escucha el evento de desplazamiento
-            window.addEventListener("scroll", adjustVolume);
+    // Lógica de scroll para pausar/reanudar video y mostrar/ocultar imagen
+    function handleScroll() {
+        const headerBottom = document.querySelector(".hero-header").getBoundingClientRect().bottom;
+        if (headerBottom <= 0) {
+            cover.style.opacity = 1;
+            video.pause();
+            videoStarted = false;
+            audioEnabled = false;
+            video.muted = true;
+        } else {
+            if (!videoStarted) {
+                video.play();
+                videoStarted = true;
+            }
+            cover.style.opacity = 0;
+            video.style.opacity = 1;
+        }
+    }
 
-            // Silenciar video al cambiar de pestaña
-            document.addEventListener("visibilitychange", () => {
-                if (document.visibilityState === "hidden") {
-                    video.volume = 0; // Silenciar el video al cambiar de pestaña
-                } else if (document.visibilityState === "visible") {
-                    video.volume = 0.1; // Restaurar el volumen reducido al volver a la pestaña
-                }
-            });
-        });
-    </script>
+    // Detectar cambio de pestaña, ventana o minimizar
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            video.muted = true;
+            audioEnabled = false;
+        }
+    });
+});
+</script>
 
 </body>
 
